@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# .htaccess
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule (.*) /index.cgi/$1
+# RewriteCond %{HTTP:X-Forwarded-SSL} !on
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+CGIT_VER=1.1
+CGIT_ZIP="cgit-${CGIT_VER}.zip"
+CGIT_DIR="/home/tuxico/webapps/git/cgit"
+CGIT_URL="https://git.zx2c4.com/cgit/snapshot/${CGIT_ZIP}"
+
+# Check current directory
+[[ $(pwd) != $(dirname ${CGIT_DIR}) ]] && exit 0 || clear
+
+# Download and extract cgit
+curl --progress-bar --remote-name ${CGIT_URL} && unzip -q ${CGIT_ZIP} && rm -rf ${CGIT_ZIP}
+
+# Let's go!
+cd cgit-${CGIT_VER}
+
+# Edit Makefile
+sed -i "2i CGIT_ROOT = ${CGIT_DIR}" Makefile
+sed -i "/^CGIT_SCRIPT_NAME/s/cgit.cgi/index.cgi/" Makefile
+sed -i "/^CGIT_SCRIPT_PATH/s/=.*/= \$(CGIT_ROOT)/" Makefile
+sed -i "/^CGIT_CONFIG/s/\/etc/\$(CGIT_ROOT)\/config/" Makefile
+sed -i "/^CACHE_ROOT/s/=.*/= \$(CGIT_ROOT)\/cache/" Makefile
+sed -i "/^prefix/s/=.*/= \$(CGIT_ROOT)/" Makefile
+sed -i "/^libdir/s/\/lib//" Makefile
+sed -i "/^filterdir/s/\/cgit//" Makefile
+
+# Prepare and build cgit
+make get-git && make && make install
+
+# Prepare FHS
+mkdir -p ${CGIT_DIR}/{cache,config,static}
+mv ${CGIT_DIR}/{cgit.*,favicon.ico} ${CGIT_DIR}/static
+mv ${CGIT_DIR}/{index.cgi,robots.txt} $(dirname ${CGIT_DIR})
+# Cleanup
+cd $(dirname ${CGIT_DIR}) && rm -rf cgit-${CGIT_VER} && rm mkcgit
+

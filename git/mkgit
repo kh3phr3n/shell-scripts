@@ -1,0 +1,18 @@
+#!/bin/bash
+
+mkGitRepository ()
+{
+    local repo="$HOME/git/$1.git" desc="$2"
+
+    # Create new Git repository
+    [[ ! -d "$repo" ]] && git init --bare $repo && chmod 700 $repo || exit 0
+    # Update project description
+    echo $desc > $repo/description && echo "Updated description in $repo/description"
+}
+
+# Start Script
+if [ "$#" -eq 2 ]
+    then mkGitRepository "$1" "$2"
+    else echo "Two arguments required: Project Description"
+fi
+

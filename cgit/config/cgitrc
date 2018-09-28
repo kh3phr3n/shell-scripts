@@ -1,0 +1,39 @@
+# Global settings
+virtual-root=/
+cache-size=1000
+remove-suffix=1
+snapshots=zip tar.gz
+
+# Statistics
+max-stats=year
+enable-commit-graph=1
+enable-log-filecount=1
+enable-log-linecount=1
+
+# About page
+readme=:readme.md
+readme=:README.md
+readme=:install.md
+readme=:INSTALL.md
+
+# Common mimetypes
+mimetype.gif=image/gif
+mimetype.html=text/html
+mimetype.jpg=image/jpeg
+mimetype.jpeg=image/jpeg
+mimetype.pdf=application/pdf
+mimetype.png=image/png
+mimetype.svg=image/svg+xml
+
+# Static resources
+css=/cgit/static/cgit.css
+logo=/cgit/static/cgit.png
+favicon=/cgit/static/favicon.ico
+
+# Filter scripts
+about-filter=/home/tuxico/webapps/git/cgit/filters/about-formatting.sh
+source-filter=/home/tuxico/webapps/git/cgit/filters/syntax-highlighting.py
+
+# Git repositories location
+scan-path=/home/tuxico/git
+

@@ -1,0 +1,18 @@
+#!/bin/bash
+
+rmGitRepository ()
+{
+    local repo="$HOME/git/$1.git"
+
+    # Ask confirmation...
+    [[ -d "$repo" ]] && read -p "Remove '$repo' ? [Y/n]: " reply || exit 0
+    # Remove Git repository
+    [[ "$reply" != ["nN"] ]] && rm -rf $repo && echo "Repository removed successfully"
+}
+
+# Start Script
+if [ "$#" -eq 1 ]
+    then rmGitRepository "$1"
+    else echo "One argument required: Project"
+fi
+
