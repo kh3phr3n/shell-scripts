@@ -1,10 +1,10 @@
 #!/bin/bash
 
 SDX='/dev/sdb'
-VER="2018.09.01"
+VER="2018.10.01"
 ISO="archlinux-${VER}-x86_64.iso"
 URL="http://archlinux.polymorf.fr/iso/${VER}"
-SHA="1649fa7e68a2c5dcc4e48b36ecbb8e318272e746"
+SHA="0755f656917eb201bff8f702f33c2e2fe149d69d"
 
 clear
 # Download the new arch iso
