@@ -15,8 +15,8 @@ UPDATES=(
     # URxvt font size
     "1:size:12:15:$HOME/.config/xrdb/urxvt/config"
     # Gtk* font size
-    "1:font:12:14:$HOME/.gtkrc-2.0"
-    "1:font:12:14:$HOME/.config/gtk-3.0/settings.ini"
+    "1:font:12:15:$HOME/.gtkrc-2.0"
+    "1:font:12:15:$HOME/.config/gtk-3.0/settings.ini"
     # VSCode zoom level
     "1:zoom:1.0:2.0:$HOME/.config/vscode/settings.json"
 )
