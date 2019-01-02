@@ -1,7 +1,8 @@
 #!/bin/bash
 
 XD='96'
-SZ='15'
+MS='15'
+UI='14'
 ZL='2.0'
 
 # Format: diff:pattern:oldvalue:newvalue:file
@@ -9,18 +10,18 @@ UPDATES=(
     # Xft dpi
     "1:dpi:166:$XD:$HOME/.config/xrdb/xft/config"
     # Pango font size
-    "0:pango:12:$SZ:$HOME/.config/i3/config"
+    "0:pango:12:$MS:$HOME/.config/i3/config"
     # Title font size
-    "0:title:12:$SZ:$HOME/.config/i3/config"
+    "0:title:12:$MS:$HOME/.config/i3/config"
     # Dmenu font size
-    "1:dmenu:-12:-$SZ:$HOME/.config/i3/config"
+    "1:dmenu:-12:-$MS:$HOME/.config/i3/config"
     # Termite font size
-    "1:font:12:$SZ:$HOME/.config/termite/config"
+    "1:font:12:$MS:$HOME/.config/termite/config"
     # URxvt font size
-    "1:size:12:$SZ:$HOME/.config/xrdb/urxvt/config"
+    "1:size:12:$MS:$HOME/.config/xrdb/urxvt/config"
     # Gtk* font size
-    "1:font:12:$SZ:$HOME/.gtkrc-2.0"
-    "1:font:12:$SZ:$HOME/.config/gtk-3.0/settings.ini"
+    "1:font:11:$UI:$HOME/.gtkrc-2.0"
+    "1:font:11:$UI:$HOME/.config/gtk-3.0/settings.ini"
     # VSCode zoom level
     "1:zoom:1.0:$ZL:$HOME/.config/vscode/settings.json"
 )
