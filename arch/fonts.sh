@@ -23,7 +23,7 @@ UPDATES=(
     "1:font:11:$UI:$HOME/.gtkrc-2.0"
     "1:font:11:$UI:$HOME/.config/gtk-3.0/settings.ini"
     # VSCode zoom level
-    "1:zoom:1.0:$ZL:$HOME/.config/vscode/settings.json"
+    "1:zoom:0.8:$ZL:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
