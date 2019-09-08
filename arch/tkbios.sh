@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# bios: 1.18
+# bios: 1.22
 # geteltorito: 0.6
 # userpages.uni-koblenz.de/~krienke/ftp/noarch/geteltorito/geteltorito/geteltorito.pl
 # wiki.archlinux.org/index.php/Flashing_BIOS_from_Linux#Bootable_optical_disk_emulation
@@ -8,9 +8,9 @@
 
 SDX='/dev/sdb'
 IMG='l380.img'
-ISO='r0rur11w.iso'
+ISO='r0rur15w.iso'
 URL='https://download.lenovo.com/pccbbs/mobiles'
-SHA='4c807573e50bd18d83df4654e626b568df4bc47eccd318e66e9a57108ff65a29'
+SHA='eed1ff6ea9251be375bd4a6fe48ed959f1b3bb6c7adb1e6ca2460b86b9766ebe'
 
 # Geteltorito is required
 [[ ! -e geteltorito.pl ]] && exit 0 || clear
