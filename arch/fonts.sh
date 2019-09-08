@@ -1,29 +1,36 @@
 #!/bin/bash
 
-XD='96'
-MS='15'
-UI='14'
-ZL='2.0'
+DPI='96'  # Xft dpi
+MSF='13'  # Monospace fonts
+SSF='13'  # Sans serif fonts
+ULS='0'   # URxvt letter spacing
+VLS='0.3' # VSCode letter spacing
+VZL='1.5' # VSCode zoom level
 
 # Format: diff:pattern:oldvalue:newvalue:file
 UPDATES=(
-    # Xft dpi
-    "1:dpi:166:$XD:$HOME/.config/xrdb/xft/config"
-    # Pango font size
-    "0:pango:12:$MS:$HOME/.config/i3/config"
-    # Title font size
-    "0:title:12:$MS:$HOME/.config/i3/config"
-    # Dmenu font size
-    "1:dmenu:-12:-$MS:$HOME/.config/i3/config"
-    # Termite font size
-    "1:font:12:$MS:$HOME/.config/termite/config"
-    # URxvt font size
-    "1:size:12:$MS:$HOME/.config/xrdb/urxvt/config"
-    # Gtk* font size
-    "1:font:11:$UI:$HOME/.gtkrc-2.0"
-    "1:font:11:$UI:$HOME/.config/gtk-3.0/settings.ini"
-    # VSCode zoom level
-    "1:zoom:0.8:$ZL:$HOME/.config/vscode/settings.json"
+    # Xft
+    "1:dpi:166:$DPI:$HOME/.config/xrdb/xft/config"
+
+    # i3wm
+    "0:pango:11:$MSF:$HOME/.config/i3/config"
+    "0:title:11:$MSF:$HOME/.config/i3/config"
+    "1:dmenu:-11:-$MSF:$HOME/.config/i3/config"
+
+    # URxvt
+    "0:size:11:$MSF:$HOME/.config/xrdb/urxvt/config"
+    "1:letter:1:$ULS:$HOME/.config/xrdb/urxvt/config"
+
+    # Alacritty
+    "1:size:11:$MSF:$HOME/.config/alacritty/alacritty.yml"
+
+    # Gtk*
+    "1:font:11:$SSF:$HOME/.gtkrc-2.0"
+    "1:font:11:$SSF:$HOME/.config/gtk-3.0/settings.ini"
+
+    # VSCode
+    "0:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
+    "1:letter:0.2:$VLS:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
