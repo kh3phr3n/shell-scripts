@@ -4,6 +4,9 @@ DPI='96'  # Xft dpi
 MSF='13'  # Monospace fonts
 SSF='13'  # Sans serif fonts
 ULS='0'   # URxvt letter spacing
+AWP='3'   # Alacritty window padding
+AOX='0'   # Alacritty font offset x
+AOY='0'   # Alacritty font offset y
 VLS='0.3' # VSCode letter spacing
 VZL='1.5' # VSCode zoom level
 
@@ -47,6 +50,8 @@ do
     test ! -e ${file}_ && cp ${file} ${file}_
     # Update current file
     sed -i "/${patn}/s/${oldv}/${newv}/g" ${file}
+    # Additional settings
+    [[ ${file} =~ 'alacritty' ]] && sed -i "4,5s/2/${AWP}/;16s/1/${AOX}/;17s/0/${AOY}/" ${file}
 
     if [ ${diff} -ne 0 ]
     then
