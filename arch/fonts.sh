@@ -7,7 +7,7 @@ ULS='0'   # URxvt letter spacing
 AWP='3'   # Alacritty window padding
 AOX='0'   # Alacritty font offset x
 AOY='0'   # Alacritty font offset y
-VLS='0.3' # VSCode letter spacing
+VLS='0.2' # VSCode letter spacing
 VZL='1.5' # VSCode zoom level
 
 # Format: diff:pattern:oldvalue:newvalue:file
@@ -33,7 +33,7 @@ UPDATES=(
 
     # VSCode
     "0:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
-    "1:letter:0.2:$VLS:$HOME/.config/vscode/settings.json"
+    # "1:letter:0.2:$VLS:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
