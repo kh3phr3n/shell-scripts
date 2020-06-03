@@ -27,6 +27,7 @@ cat > tsconfig.json << EOF
     "rootDir": "./src",
     "declaration": true,
     "removeComments": true,
+    "esModuleInterop": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
