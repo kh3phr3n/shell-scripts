@@ -1,10 +1,10 @@
 #!/bin/bash
 
-SDX='/dev/sdb'
-VER="2020.06.01"
+SDX='/dev/sdc'
+VER="2020.07.01"
 ISO="archlinux-${VER}-x86_64.iso"
 URL="http://archlinux.polymorf.fr/iso/${VER}"
-SHA="133c639a753af64ddb8e7e89282d427f170f67ca"
+SHA="8bcd9ef5d7bd22a5e1de671905abaf07ca8cd7f5"
 
 clear
 # Download the new arch iso
