@@ -32,7 +32,7 @@ UPDATES=(
     "1:font:11:$SSF:$HOME/.config/gtk-3.0/settings.ini"
 
     # VSCode
-    "0:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
+    "1:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
     # "1:letter:0.2:$VLS:$HOME/.config/vscode/settings.json"
 )
 
