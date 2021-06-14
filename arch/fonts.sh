@@ -3,11 +3,10 @@
 DPI='96'  # Xft dpi
 MSF='13'  # Monospace fonts
 SSF='13'  # Sans serif fonts
-ULS='0'   # URxvt letter spacing
+ULS='-1'  # URxvt letter spacing
 AWP='3'   # Alacritty window padding
 AOX='0'   # Alacritty font offset x
 AOY='0'   # Alacritty font offset y
-VLS='0.2' # VSCode letter spacing
 VZL='1.5' # VSCode zoom level
 
 # Format: diff:pattern:oldvalue:newvalue:file
@@ -22,7 +21,7 @@ UPDATES=(
 
     # URxvt
     "0:size:11:$MSF:$HOME/.config/xrdb/urxvt/config"
-    "1:letter:1:$ULS:$HOME/.config/xrdb/urxvt/config"
+    "1:letter:0:$ULS:$HOME/.config/xrdb/urxvt/config"
 
     # Alacritty
     "1:size:11:$MSF:$HOME/.config/alacritty/alacritty.yml"
@@ -33,7 +32,6 @@ UPDATES=(
 
     # VSCode
     "1:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
-    # "1:letter:0.2:$VLS:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
