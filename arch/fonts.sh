@@ -64,7 +64,7 @@ do
     # Update current file
     sed -i "/${patn}/s/${oldv}/${newv}/g" ${file}
     # Additional settings
-    [[ ${file} =~ 'alacritty' ]] && sed -i "8,9s/2/${AWP}/;20s/1/${AOX}/;21s/0/${AOY}/" ${file}
+    [[ ${file} =~ 'alacritty' ]] && sed -i "8,9s/2/${AWP}/;17s/1/${AOX}/;18s/0/${AOY}/" ${file}
 
     if [ ${diff} -ne 0 ]
     then
