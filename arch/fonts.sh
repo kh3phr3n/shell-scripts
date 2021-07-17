@@ -1,13 +1,28 @@
 #!/bin/bash
 
-DPI='96'  # Xft dpi
-MSF='13'  # Monospace fonts
-SSF='13'  # Sans serif fonts
-ULS='-1'  # URxvt letter spacing
-AWP='3'   # Alacritty window padding
-AOX='0'   # Alacritty font offset x
-AOY='0'   # Alacritty font offset y
-VZL='1.5' # VSCode zoom level
+# Resolution
+QHD=true
+
+if [ "${QHD}" == true ]
+then
+    DPI='109' # Xft dpi
+    MSF='12'  # Monospace fonts
+    SSF='13'  # Sans serif fonts
+    ULS='0'   # URxvt letter spacing
+    AWP='3'   # Alacritty window padding
+    AOX='0'   # Alacritty font offset x
+    AOY='0'   # Alacritty font offset y
+    VZL='1.3' # VSCode zoom level
+else
+    DPI='96'
+    MSF='13'
+    SSF='13'
+    ULS='-1'
+    AWP='3'
+    AOX='0'
+    AOY='0'
+    VZL='1.5'
+fi
 
 # Format: diff:pattern:oldvalue:newvalue:file
 UPDATES=(
@@ -31,7 +46,7 @@ UPDATES=(
     "1:font:11:$SSF:$HOME/.config/gtk-3.0/settings.ini"
 
     # VSCode
-    "1:zoom:0.7:$VZL:$HOME/.config/vscode/settings.json"
+    "1:zoom:0.6:$VZL:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
