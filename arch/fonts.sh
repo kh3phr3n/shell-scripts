@@ -12,7 +12,7 @@ then
     AWP='3'   # Alacritty window padding
     AOX='0'   # Alacritty font offset x
     AOY='0'   # Alacritty font offset y
-    VZL='1.3' # VSCode zoom level
+    VZL='1.2' # VSCode zoom level
 else
     DPI='96'
     MSF='13'
@@ -27,7 +27,7 @@ fi
 # Format: diff:pattern:oldvalue:newvalue:file
 UPDATES=(
     # Xft
-    "1:dpi:166:$DPI:$HOME/.config/xrdb/xft/config"
+    "1:dpi:156:$DPI:$HOME/.config/xrdb/xft/config"
 
     # i3wm
     "0:pango:11:$MSF:$HOME/.config/i3/config"
@@ -64,7 +64,7 @@ do
     # Update current file
     sed -i "/${patn}/s/${oldv}/${newv}/g" ${file}
     # Additional settings
-    [[ ${file} =~ 'alacritty' ]] && sed -i "8,9s/2/${AWP}/;17s/1/${AOX}/;18s/0/${AOY}/" ${file}
+    [[ ${file} =~ 'alacritty' ]] && sed -i "8,9s/2/${AWP}/;17s/0/${AOX}/;18s/0/${AOY}/" ${file}
 
     if [ ${diff} -ne 0 ]
     then
