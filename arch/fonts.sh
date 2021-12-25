@@ -5,23 +5,25 @@ QHD=true
 
 if [ "${QHD}" == true ]
 then
-    DPI='109' # Xft dpi
-    MSF='12'  # Monospace fonts
-    SSF='13'  # Sans serif fonts
-    ULS='0'   # URxvt letter spacing
-    AWP='3'   # Alacritty window padding
-    AOX='0'   # Alacritty font offset x
-    AOY='0'   # Alacritty font offset y
-    VZL='1.2' # VSCode zoom level
+    DPI='109'   # Xft dpi
+    MSF='12'    # Monospace fonts
+    SSF='13'    # Sans serif fonts
+    ULS='0'     # URxvt letter spacing
+    AWP='3'     # Alacritty window padding
+    AOX='0'     # Alacritty font offset x
+    AOY='0'     # Alacritty font offset y
+    VZL='1.2'   # VS Code zoom level
+    VFS='12.85' # VS Code editor font size
 else
     DPI='96'
-    MSF='13'
-    SSF='13'
-    ULS='-1'
+    MSF='11'
+    SSF='12'
+    ULS='0'
     AWP='3'
     AOX='0'
     AOY='0'
-    VZL='1.5'
+    VZL='0.8'
+    VFS='12'
 fi
 
 # Format: diff:pattern:oldvalue:newvalue:file
@@ -45,8 +47,9 @@ UPDATES=(
     "1:font:11:$SSF:$HOME/.gtkrc-2.0"
     "1:font:11:$SSF:$HOME/.config/gtk-3.0/settings.ini"
 
-    # VSCode
-    "1:zoom:0.6:$VZL:$HOME/.config/vscode/settings.json"
+    # VS Code
+    "0:zoom:0.6:$VZL:$HOME/.config/vscode/settings.json"
+    "1:editor.fontSize:13:$VFS:$HOME/.config/vscode/settings.json"
 )
 
 # Let's update files
