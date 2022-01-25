@@ -25,7 +25,10 @@ clear
 # Create backup file
 test ! -e ${SFL}_ && cp ${SFL} ${SFL}_
 
-# Update current settings
+# Remove php,css settings
+sed -i "" "68,94d;56,59d" ${SFL}
+
+# Update metric settings
 sed -i "" "/zoom/s/0/${ZL}/g" ${SFL}
 sed -i "" "/fontSize/s/13/${FS}/g" ${SFL}
 sed -i "" "/editor.lineHeight/s/17/${ELH}/g" ${SFL}
