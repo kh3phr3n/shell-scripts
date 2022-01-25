@@ -1,10 +1,10 @@
 #!/bin/zsh
 
 # Settings file location
-SFL='~/Library/Application\ Support/Code/User/settings.json'
+SFL=~'/Library/Application Support/Code/User/settings.json'
 
 # Font family
-FF='SFMonoPowerline-Regular'
+FF='SFMonoPowerline-Medium'
 # Font sizes
 FS='14'
 
@@ -22,14 +22,18 @@ TLH='1.2'
 TLS='1'
 
 clear
-sed -i_ "/zoom/s/0/$ZL/g" $SFL
-sed -i_ "/fontSize/s/13/$FS/g" $SFL
-sed -i_ "/editor.lineHeight/s/17/$ELH/g" $SFL
-sed -i_ "/integrated.lineHeight/s/1/$TLH/g" $SFL
-sed -i_ "/editor.letterSpacing/s/0.5/$ELS/g" $SFL
-sed -i_ "/integrated.letterSpacing/s/1/$TLS/g" $SFL
-sed -i_ "/editor.fontFamily/s/'Iosevka Term Semibold'/$FF/g" $SFL
+# Create backup file
+test ! -e ${SFL}_ && cp ${SFL} ${SFL}_
+
+# Update current settings
+sed -i "" "/zoom/s/0/${ZL}/g" ${SFL}
+sed -i "" "/fontSize/s/13/${FS}/g" ${SFL}
+sed -i "" "/editor.lineHeight/s/17/${ELH}/g" ${SFL}
+sed -i "" "/integrated.lineHeight/s/1/${TLH}/g" ${SFL}
+sed -i "" "/editor.letterSpacing/s/0.5/${ELS}/g" ${SFL}
+sed -i "" "/integrated.letterSpacing/s/1/${TLS}/g" ${SFL}
+sed -i "" "/editor.fontFamily/s/'Iosevka Term Semibold'/${FF}/g" ${SFL}
 
 # Inspect new settings
-git diff ${SFL}_ ${SFL} && rm ${SFL}_
+git diff ${SFL}_ ${SFL}; rm ${SFL}_
 
