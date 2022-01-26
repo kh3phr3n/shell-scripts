@@ -37,41 +37,41 @@ fi
 # Format: diff:pattern:oldvalue:newvalue:file
 UPDATES=(
     # Xft
-    "1:dpi:158:$DPI:$HOME/.config/xrdb/xft/config"
+    "1:dpi:158:${DPI}:${HOME}/.config/xrdb/xft/config"
 
     # i3wm
-    "0:pango:10:$MSF:$HOME/.config/i3/config"
-    "0:title:10:$MSF:$HOME/.config/i3/config"
-    "1:dmenu:-10:-$MSF:$HOME/.config/i3/config"
+    "0:pango:10:${MSF}:${HOME}/.config/i3/config"
+    "0:title:10:${MSF}:${HOME}/.config/i3/config"
+    "1:dmenu:-10:-${MSF}:${HOME}/.config/i3/config"
 
     # URxvt
-    "0:size:10:$MSF:$HOME/.config/xrdb/urxvt/config"
-    "1:letter:0:$ULS:$HOME/.config/xrdb/urxvt/config"
+    "0:size:10:${MSF}:${HOME}/.config/xrdb/urxvt/config"
+    "1:letter:0:${ULS}:${HOME}/.config/xrdb/urxvt/config"
 
     # Alacritty
-    "1:size:10:$MSF:$HOME/.config/alacritty/alacritty.yml"
+    "1:size:10:${MSF}:${HOME}/.config/alacritty/alacritty.yml"
 
     # Gtk*
-    "1:font:10:$SSF:$HOME/.gtkrc-2.0"
-    "1:font:10:$SSF:$HOME/.config/gtk-3.0/settings.ini"
+    "1:font:10:${SSF}:${HOME}/.gtkrc-2.0"
+    "1:font:10:${SSF}:${HOME}/.config/gtk-3.0/settings.ini"
 
     # VS Code
-    "0:zoom:0:$VZL:$HOME/.config/vscode/settings.json"
-    "0:fontSize:13:$VFS:$HOME/.config/vscode/settings.json"
-    "0:editor.lineHeight:17:$VELH:$HOME/.config/vscode/settings.json"
-    "0:integrated.lineHeight:1:$VTLH:$HOME/.config/vscode/settings.json"
-    "0:editor.letterSpacing:0.5:$VELS:$HOME/.config/vscode/settings.json"
-    "1:integrated.letterSpacing:1:$VTLS:$HOME/.config/vscode/settings.json"
+    "0:zoom:0:${VZL}:${HOME}/.config/vscode/settings.json"
+    "0:fontSize:13:${VFS}:${HOME}/.config/vscode/settings.json"
+    "0:editor.lineHeight:17:${VELH}:${HOME}/.config/vscode/settings.json"
+    "0:integrated.lineHeight:1:${VTLH}:${HOME}/.config/vscode/settings.json"
+    "0:editor.letterSpacing:0.5:${VELS}:${HOME}/.config/vscode/settings.json"
+    "1:integrated.letterSpacing:1:${VTLS}:${HOME}/.config/vscode/settings.json"
 )
 
 # Let's update files
 for update in ${UPDATES[@]}
 do
-    diff=$(echo $update | cut -d: -f1)
-    patn=$(echo $update | cut -d: -f2)
-    oldv=$(echo $update | cut -d: -f3)
-    newv=$(echo $update | cut -d: -f4)
-    file=$(echo $update | cut -d: -f5)
+    diff=$(echo ${update} | cut -d: -f1)
+    patn=$(echo ${update} | cut -d: -f2)
+    oldv=$(echo ${update} | cut -d: -f3)
+    newv=$(echo ${update} | cut -d: -f4)
+    file=$(echo ${update} | cut -d: -f5)
 
     clear
     # Create backup file
