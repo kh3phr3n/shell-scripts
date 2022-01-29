@@ -25,8 +25,9 @@ clear
 # Create backup file
 test ! -e ${SFL}_ && cp ${SFL} ${SFL}_
 
-# Remove php,css settings
+# Remove unused settings
 sed -i "" "68,94d;56,59d" ${SFL}
+sed -i "" "/policy/d;/linuxExec/d" ${SFL}
 
 # Update metric settings
 sed -i "" "/zoom/s/0/${ZL}/g" ${SFL}
