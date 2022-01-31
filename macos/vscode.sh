@@ -9,15 +9,15 @@ FF='SFMonoPowerline-Medium'
 FS='14'
 
 # Zoom level
-ZL='0'
+ZL='0.1'
 
 # Editor line height
 ELH='0'
 # Editor letter spacing
-ELS='0.3'
+ELS='0.2'
 
 # Terminal line height
-TLH='1.2'
+TLH='1.1'
 # Terminal letter spacing
 TLS='1'
 
