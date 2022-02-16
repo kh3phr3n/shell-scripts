@@ -17,7 +17,7 @@ ELH='0'
 ELS='0.2'
 
 # Terminal line height
-TLH='1.1'
+TLH='1.2'
 # Terminal letter spacing
 TLS='1'
 
