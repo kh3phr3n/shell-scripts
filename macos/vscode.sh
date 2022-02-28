@@ -4,7 +4,7 @@
 SFL=~'/Library/Application Support/Code/User/settings.json'
 
 # Font family
-FF='SFMonoPowerline-Semibold'
+FF='SFMonoPowerline-Medium'
 # Font sizes
 FS='14'
 
