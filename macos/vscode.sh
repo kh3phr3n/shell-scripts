@@ -26,7 +26,6 @@ clear
 test ! -e ${SFL}_ && cp ${SFL} ${SFL}_
 
 # Remove unused settings
-sed -i "" "78,104d" ${SFL}
 sed -i "" "/linuxExec/d;/custom_css/d" ${SFL}
 
 # Update metric settings
