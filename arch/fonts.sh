@@ -14,6 +14,7 @@ then
     AOY='0'    # Alacritty font offset y
     VFS='13'   # VS Code font sizes
     VZL='0.8'  # VS Code zoom level
+    VHFS='10'  # VS Code hints font size
     VELH='17'  # VS Code editor line height
     VELS='0.2' # VS Code editor letter spacing
     VTLH='1'   # VS Code terminal line height
@@ -28,6 +29,7 @@ else
     AOY='0'
     VFS='13'
     VZL='0.8'
+    VHFS='10'
     VELH='17'
     VELS='0.1'
     VTLH='1'
@@ -58,6 +60,7 @@ UPDATES=(
     # VS Code
     "0:zoom:0:${VZL}:${HOME}/.config/vscode/settings.json"
     "0:fontSize:13:${VFS}:${HOME}/.config/vscode/settings.json"
+    "0:editor.inlayHints:10:${VHFS}:${HOME}/.config/vscode/settings.json"
     "0:editor.lineHeight:17:${VELH}:${HOME}/.config/vscode/settings.json"
     "0:integrated.lineHeight:1:${VTLH}:${HOME}/.config/vscode/settings.json"
     "0:editor.letterSpacing:0.5:${VELS}:${HOME}/.config/vscode/settings.json"
