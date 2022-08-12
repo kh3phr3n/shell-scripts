@@ -5,8 +5,10 @@ SFL=~'/Library/Application Support/Code/User/settings.json'
 
 # Font family
 FF='SFMonoPowerline-Medium'
-# Font sizes
+# Common font sizes
 FS='14'
+# Hints font size
+HFS='11'
 
 # Zoom level
 ZL='0.1'
@@ -31,11 +33,12 @@ sed -i "" "/linuxExec/d;/custom_css/d" ${SFL}
 # Update metric settings
 sed -i "" "/zoom/s/0/${ZL}/g" ${SFL}
 sed -i "" "/fontSize/s/13/${FS}/g" ${SFL}
+sed -i "" "/editor.inlayHints/s/10/${HFS}/g" ${SFL}
 sed -i "" "/editor.lineHeight/s/17/${ELH}/g" ${SFL}
 sed -i "" "/integrated.lineHeight/s/1/${TLH}/g" ${SFL}
 sed -i "" "/editor.letterSpacing/s/0.5/${ELS}/g" ${SFL}
 sed -i "" "/integrated.letterSpacing/s/1/${TLS}/g" ${SFL}
-sed -i "" "/editor.fontFamily/s/'Iosevka Term Semibold'/${FF}/g" ${SFL}
+sed -i "" "/editor.fontFamily/s/Iosevka Term Semibold/${FF}/g" ${SFL}
 
 # Inspect new settings
 git diff ${SFL}_ ${SFL}; rm ${SFL}_
