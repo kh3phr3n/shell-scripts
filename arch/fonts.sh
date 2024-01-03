@@ -51,7 +51,7 @@ UPDATES=(
     "1:letter:0:${ULS}:${HOME}/.config/xrdb/urxvt/config"
 
     # Alacritty
-    "1:size:10:${MSF}:${HOME}/.config/alacritty/alacritty.yml"
+    "1:size:10:${MSF}:${HOME}/.config/alacritty/alacritty.toml"
 
     # Gtk*
     "1:font:10:${SSF}:${HOME}/.gtkrc-2.0"
@@ -82,7 +82,7 @@ do
     # Update current file
     sed -i "/${patn}/s/${oldv}/${newv}/g" ${file}
     # Additional settings
-    [[ ${file} =~ 'alacritty' ]] && sed -i "8,9s/2/${AWP}/;17s/0/${AOX}/;18s/0/${AOY}/" ${file}
+    [[ ${file} =~ 'alacritty' ]] && sed -i "5,6s/2/${AWP}/;12s/0/${AOX}/;13s/0/${AOY}/" ${file}
 
     if [ ${diff} -ne 0 ]
     then
