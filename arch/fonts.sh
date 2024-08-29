@@ -5,35 +5,39 @@ QHD=true
 
 if [ "${QHD}" == true ]
 then
-    DPI='109'  # Xft dpi
-    MSF='11'   # Monospace fonts
-    SSF='11'   # Sans serif fonts
-    ULS='0'    # URxvt letter spacing
-    AWP='3'    # Alacritty window padding
-    AOX='0'    # Alacritty font offset x
-    AOY='0'    # Alacritty font offset y
-    VFS='13'   # VS Code font sizes
-    VZL='0.8'  # VS Code zoom level
-    VHFS='10'  # VS Code hints font size
-    VELH='17'  # VS Code editor line height
-    VELS='0.2' # VS Code editor letter spacing
-    VTLH='1'   # VS Code terminal line height
-    VTLS='1'   # VS Code terminal letter spacing
+    DPI='109'   # Xft dpi
+    MSF='11'    # Monospace fonts
+    SSF='11'    # Sans serif fonts
+    AWP='3'     # Alacritty window padding
+    AOX='0'     # Alacritty font offset x
+    AOY='0'     # Alacritty font offset y
+    VFS='13'    # VS Code font sizes
+    VZL='0.8'   # VS Code zoom level
+    VHFS='10'   # VS Code hints font size
+    VELH='20'   # VS Code editor line height
+    VELS='-0.2' # VS Code editor letter spacing
+    VTLH='1'    # VS Code terminal line height
+    VTLS='0'    # VS Code terminal letter spacing
+    NVXP='3'    # Neovide x-axis padding
+    NVFS='11'   # Neovide font size
+    NVWD='0'    # Neovide width relative offset
 else
     DPI='96'
     MSF='11'
     SSF='11'
-    ULS='0'
     AWP='3'
     AOX='0'
     AOY='0'
     VFS='13'
     VZL='0.8'
     VHFS='10'
-    VELH='17'
-    VELS='0.1'
-    VTLH='1'
-    VTLS='1'
+    VELH='20'
+    VELS='0'
+    VTLH='1.05'
+    VTLS='0'
+    NVXP='3'
+    NVFS='11'
+    NVWD='0.15'
 fi
 
 # Format: diff:pattern:oldvalue:newvalue:file
@@ -46,16 +50,17 @@ UPDATES=(
     "0:title:10:${MSF}:${HOME}/.config/i3/config"
     "1:dmenu:-10:-${MSF}:${HOME}/.config/i3/config"
 
-    # URxvt
-    "0:size:10:${MSF}:${HOME}/.config/xrdb/urxvt/config"
-    "1:letter:0:${ULS}:${HOME}/.config/xrdb/urxvt/config"
+    # Gtk*
+    "1:font:10:${SSF}:${HOME}/.gtkrc-2.0"
+    "1:font:10:${SSF}:${HOME}/.config/gtk-3.0/settings.ini"
 
     # Alacritty
     "1:size:10:${MSF}:${HOME}/.config/alacritty/alacritty.toml"
 
-    # Gtk*
-    "1:font:10:${SSF}:${HOME}/.gtkrc-2.0"
-    "1:font:10:${SSF}:${HOME}/.config/gtk-3.0/settings.ini"
+    # Neovide
+    "0:padding:4:${NVXP}:${HOME}/.config/nvim/lua/core/options.lua"
+    "0:guifont:9:${NVFS}:${HOME}/.config/nvim/lua/core/options.lua"
+    "1:guifont:0.12:${NVWD}:${HOME}/.config/nvim/lua/core/options.lua"
 
     # VS Code
     "0:zoom:0:${VZL}:${HOME}/.config/vscode/settings.json"
