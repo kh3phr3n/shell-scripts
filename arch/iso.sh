@@ -1,10 +1,10 @@
 #!/bin/bash
 
 SDX='/dev/sdc'
-VER="2023.03.01"
+VER='2024.09.01'
 ISO="archlinux-${VER}-x86_64.iso"
 URL="https://mirrors.gandi.net/archlinux/iso/${VER}"
-SHA="816758ba8fd8a06dff539b9af08eb8100c8bad526ac19ef4486bce99cd3ca18c"
+SHA='1652f3cee1b9857742123d392bb467bc5472ecd59a977bd6e17b7c379607b20c'
 
 clear
 # Download the new arch iso
